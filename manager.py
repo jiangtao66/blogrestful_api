@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 app.register_blueprint(main_blueprint)
 api = Api(app)
-api.add_resource(HelloWorld)
+api.add_resource(HelloWorld, '/')
 manager = Manager(app)
 
 
