@@ -1,15 +1,8 @@
 #!./venv/bin/python
 from flask_script import Manager, Shell
-from flask import Flask
-from flask_restful import Api
-from app.main import main as main_blueprint
-from app.main.views import HelloWorld
+from app import create_app
 
-app = Flask(__name__)
-
-app.register_blueprint(main_blueprint)
-api = Api(app)
-api.add_resource(HelloWorld, '/')
+app = create_app()
 manager = Manager(app)
 
 
