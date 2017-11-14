@@ -12,5 +12,5 @@ class TodoSimple(Resource):
         return {todo_id: todo[todo_id]}
 
     def put(self, todo_id):
-        todo[todo_id] = request.form['data']
+        todo[todo_id] = request.args.get('data')
         return {todo_id: todo[todo_id]}
